@@ -5,7 +5,7 @@ setup(
     version='1.0',
     author='Cloudify',
     author_email='hello@cloudify.co',
-    packages=find_packages(include='cmom*'),
+    packages=find_packages(exclude='cmom*'),
     description='Cloudify Manager of Managers plugin',
     install_requires=[
         # 'cloudify-plugins-common>=4.3.dev1'
