@@ -366,7 +366,7 @@ scripts:
 ```
 
 6. `files` - a list of files to copy to the Tier 1 managers from the
-Tier 2 amnager after the Tier 1 managers' installation.
+Tier 2 manager after the Tier 1 managers' installation.
 All these files need to be available on the Tier 2 manager and
 accessible by `cfyuser`. These files will be copied *after* the
 manager is installed but *before* the cluster is created. The format is:
