@@ -70,13 +70,13 @@ node_templates:
             args:
               fixed_ips: { get_attribute: [ resource, fixed_ip ] }
     relationships:
-    - type: cloudify.relationships.contained_in
+    - type: cloudify.relationships.depends_on
       target: os_network
-    - type: cloudify.openstack.port_connected_to_subnet
-      target: os_subnet
+    # - type: cloudify.openstack.port_connected_to_subnet
+    #   target: os_subnet
     - type: cloudify.openstack.port_connected_to_security_group
       target: os_security_group
-    - type: cloudify.relationships.depends_on
+    - type: cloudify.relationships.contained_in
       target: resource
 
   host:
@@ -91,8 +91,8 @@ node_templates:
       # We're doing "contained_in" here, in order to take advantage of the
       # scaling semantics. We need all group members to be contained
       # in the same node
-      - type: cloudify.relationships.contained_in
-        target: os_network
+      # - type: cloudify.relationships.contained_in
+      #   target: os_network
       - type: cloudify.relationships.depends_on
         target: resource
     interfaces:
